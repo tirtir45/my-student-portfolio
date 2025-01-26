@@ -25,6 +25,5 @@ document.addEventListener("DOMContentLoaded",()=>{
         return;
     }
     alert('Your message is sent◝(ᵔᗜᵔ)◜');
-    e.preventDefault();
     });
 });
