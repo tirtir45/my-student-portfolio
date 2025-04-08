@@ -58,6 +58,12 @@ nav{
     align-items: center;
     padding: 0 50px ;
     height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color:#dbb6b718;
 }
 
 nav .left a{
@@ -290,6 +296,40 @@ nav .right a span{
 
 .projects-me .link a:hover{
     filter: brightness(0.9);
+}
+
+/* Coming Soon Dot Animation */
+.projects-comingsoon .dot-animation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #555;
+}
+
+.projects-comingsoon .dot-animation span {
+    animation: blink 1.5s infinite;
+    margin: 0 5px;
+}
+
+.projects-comingsoon .dot-animation span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.projects-comingsoon .dot-animation span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes blink {
+    0%, 20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /*contact*/
