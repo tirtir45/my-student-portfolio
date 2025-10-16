@@ -188,6 +188,187 @@ nav .right a span{
     font-size: 18px;
 }
 
+/*My Certifications*/
+.certif-me{
+    padding: 0 50px;
+    margin-bottom:100px;
+    text-align: center;
+}
+
+.certif-me h2{
+    font-size:35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.certif-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    width: 100%;
+    align-items: stretch; 
+    justify-items: center; 
+    padding: 0 10px;
+}
+
+.certif-card{
+    background-color: #FEFEFF;
+    border: 2px solid #DBB6B7;
+    border-radius: 12px;
+    padding: 18px;
+        width: 100%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform .18s, box-shadow .18s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position: relative; 
+}
+
+.certif-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.certif-card .badge{
+    width: 140px;
+    height: 140px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom: 12px;
+    overflow: visible; 
+    background: transparent;
+    border-radius: 50%;
+}
+
+.certif-card .badge img{
+    max-width: 100%;
+    height: auto;
+    display:block;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.badge img,
+.skills-me .cell img{
+    transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+    will-change: transform;
+}
+
+.badge img:hover{
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Disable hover animations for headshot, project logos, and skill icons */
+.about-me .headshot img,
+.projects-me .projects img,
+.skills-me .cell img{
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.certif-card:hover .badge img,
+.certif-card:focus-within .badge img{
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+@keyframes floaty {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+.float {
+    animation: floaty 4s ease-in-out infinite;
+}
+
+.skills-me .cell img:active{
+    transform: scale(.98);
+}
+
+.float:hover,
+.float:focus{
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .float{ animation: none !important; }
+    .badge img, .projects img, .headshot img, .skills-me .cell img{ transition: none !important; }
+}
+
+.certif-card .status{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.certif-card .status.in-progress{
+    background: linear-gradient(90deg,#ffdfe6 0%, #ffd1d8 100%);
+    color: #7a3b43;
+}
+
+.certif-card .status.completed{
+
+    background: linear-gradient(90deg,#e6fff0 0%, #d8ffea 100%);
+    color: #2b6b4a;
+}
+
+.certif-card h4{
+    font-size:18px;
+    color:#8384c2;
+    margin: 6px 0;
+}
+
+.certif-card p{
+    font-size:14px;
+    color:#666;
+    margin:0;
+}
+
+.certif-card .meta{
+    color: var(--text-color);
+    font-weight:600;
+    margin-top:8px;
+}
+
+.certif-card .actions a{
+    display:inline-block;
+    padding:8px 12px;
+    margin-top:12px;
+    background-color:#FFE4ED;
+    color:black;
+    border-radius:6px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:.12s;
+}
+
+.certif-card .actions a:hover{
+    filter:brightness(.95);
+    border-color:var(--text-color);
+}
+
+.coloring{
+    color:#d68c8e;
+    font-weight:500;
+}
+
+.certif-me .link{
+    margin-top:12px;
+}
+
 /*My internships*/
 .internships-me{
     padding: 0 50px;
@@ -286,6 +467,18 @@ nav .right a span{
 .projects-me .link a{
     display: inline-block;
     padding: 10px 15px;
+
+    .certif-card > h4,
+    .certif-card > p,
+    .certif-card > .actions{
+        width: 100%;
+    }
+
+    .certif-card .actions{
+        margin-top: auto; /* push actions to bottom so cards align */
+        display:flex;
+        justify-content:center;
+    }
     margin-top: 10px;
     background-color: #FFE4ED;
     color: black;
@@ -460,6 +653,22 @@ nav .right a span{
 
     /*contact*/
     .contact-me{
+        padding: 0 20px;
+    }
+}
+
+/* certificates responsiveness */
+
+@media(max-width:740px){
+    .certif-card{
+        width: 45%;
+    }
+}
+@media(max-width:480px){
+    .certif-card{
+        width: 100%;
+    }
+    .certif-me{
         padding: 0 20px;
     }
 }
