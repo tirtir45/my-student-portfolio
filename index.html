@@ -15,6 +15,22 @@
     <script src="contact.js"></script>
     <script src="loading.js"></script>
     
+    <script>
+        function toggleProjectDetails(event) {
+            event.preventDefault();
+            const detailsDiv = document.getElementById('project-details');
+            const btn = event.target;
+            
+            if (detailsDiv.style.display === 'none') {
+                detailsDiv.style.display = 'block';
+                btn.textContent = 'Read Less';
+            } else {
+                detailsDiv.style.display = 'none';
+                btn.textContent = 'Read More';
+            }
+        }
+    </script>
+    
     <div id="loading-screen" class="loading">
         <div class="loader"></div>
         <p>loading</p>
@@ -93,27 +109,27 @@
             </div>
             <div class="cells">
                 <div class="cell">
-                    <img src="/resources/c.webp" alt="c logo">
+                    <img src="/resources/c.png" alt="c logo">
                     <span>C</span>
                 </div>
 
                 <div class="cell">
-                    <img src="/resources/linux.webp" alt="linux logo">
+                    <img src="/resources/linux.png" alt="linux logo">
                     <span>Linux</span>
                 </div>
 
                 <div class="cell">
-                    <img src="/resources/c++.webp" alt="c++ logo">
+                    <img src="/resources/c++.png" alt="c++ logo">
                     <span>C++</span>
                 </div>
 
                 <div class="cell">
-                    <img src="/resources/html.webp" alt="html logo">
+                    <img src="/resources/html.png" alt="html logo">
                     <span>HTML</span>
                 </div>
                 
                 <div class="cell">
-                    <img src="/resources/javascript.webp" alt="javascript logo">
+                    <img src="/resources/javascript.png" alt="javascript logo">
                     <span>JavaScript</span>
                 </div>
 
@@ -132,6 +148,20 @@
                     <span>Github</span>
                 </div>
 
+                <div class="cell">
+                    <img src="/resources/java.png" alt="java logo">
+                    <span>Java</span>
+                </div>
+
+                <div class="cell">
+                    <img src="/resources/symfony.png" alt="symfony logo">
+                    <span>Symfony</span>
+                </div>
+
+                <div class="cell">
+                    <img src="/resources/Gns3.png" alt="GNS3 logo">
+                    <span>GNS3</span>
+                </div>
             </div>
         </section>
 
@@ -270,6 +300,28 @@
                         <h4>EduTrack</h4>
                         <p>Our team, InnoDev, developed the idea of creating a desktop application to streamline exam distribution on a national scale. In addition to the software, we built an Arduino prototype to give users a better understanding of how the system works in real-life scenarios.</p>
                         <div class="link"><a href="https://github.com/tirtir45/Edutrack_final.git">View on Github</a></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h4>PI: Systémes & Réseaux</h4>
+                        <p><strong>Project Overview:</strong><br>
+                        Led a comprehensive academic project designing a multiservice enterprise network infrastructure that simulates a real company environment.</p>
+                        
+                        <div id="project-details" class="project-details" style="display: none;">
+                            <p><strong>My Role – Web Department:</strong></p>
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                <li>Configured and deployed a Web Server for the Marketing department on a Linux virtual machine</li>
+                                <li>Implemented Apache2 with automated installation and configuration scripts</li>
+                                <li>Established local subnet infrastructure, client PCs, and backbone connectivity</li>
+                                <li>Performed comprehensive testing of service availability and inter-department communication</li>
+                                <li>Ensured secure and reliable web service access across the entire network</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="read-more-btn" onclick="toggleProjectDetails(event)">Read More</a>
+                        <div class="link"><a href="https://github.com/tirtir45/pi-reseau.git">View on Github</a></div>
                     </div>
                 </div>
             </div>
