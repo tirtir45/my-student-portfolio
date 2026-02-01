@@ -12,6 +12,7 @@
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body{
@@ -711,32 +712,39 @@ nav .right a span{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    color: #555;
+    gap: 8px;
+    height: 30px;
 }
 
 .projects-comingsoon .dot-animation span {
-    animation: blink 1.5s infinite;
-    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: wave 1.2s ease-in-out infinite;
+    box-shadow: 0 4px 6px rgba(224, 102, 102, 0.3);
+}
+
+.projects-comingsoon .dot-animation span:nth-child(1) {
+    background-color: #E8838E;
+    animation-delay: 0s;
 }
 
 .projects-comingsoon .dot-animation span:nth-child(2) {
-    animation-delay: 0.3s;
+    background-color: #e06666;
+    animation-delay: 0.15s;
 }
 
 .projects-comingsoon .dot-animation span:nth-child(3) {
-    animation-delay: 0.6s;
+    background-color: #FFCCD5;
+    animation-delay: 0.3s;
 }
 
-@keyframes blink {
-    0%, 20% {
-        opacity: 0;
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
     }
     50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
+        transform: translateY(-10px);
     }
 }
 
@@ -903,5 +911,76 @@ nav .right a span{
     }
     .certif-me{
         padding: 0 20px;
+    }
+}
+
+/* Read More button styling */
+.read-more-btn {
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--link-color);
+    font-size: 14px;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+}
+
+.read-more-btn:hover {
+    opacity: 0.7;
+}
+
+.project-details {
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #f5d4d4;
+    color: var(--text-color);
+    padding: 30px 50px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.footer-right {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-right a {
+    color: var(--text-color);
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-right a:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-right {
+        justify-content: center;
     }
 }
